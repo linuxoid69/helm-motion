@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  motion.conf: |
+  {{- .Values.motionConfig | nindent 4 }}
